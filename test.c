@@ -3,7 +3,7 @@
 
 int main()
 {
-    char c;
+    // char c;
     /*
     printf("%d\n", EOF);
     printf("%lu\n", sizeof(EOF));
