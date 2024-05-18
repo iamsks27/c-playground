@@ -1,0 +1,41 @@
+// Reading a input character 
+// & then printing it again in the output.
+main() {
+    int c;
+
+    while ((c = getchar()) != EOF) {
+        putChar(c);
+    }
+}
+
+In the earlier version of c, function would have been written like this:
+
+int power(base, n) // parameters are named between the parentheses
+int base, n; // and their types are declared before opening left brace
+{
+
+}
+
+When a name of an array is passed to a function, the value passed to the function is the location 
+or address of the beginning of the array - there is no copying of elements. 
+
+Character Arrays:
+The most common type of array in C is the array of characters. 
+
+
+while (there's another line) 
+    if (it's longer than the previous longest)
+        save it
+        save its length
+print the longest line
+
+
+
+max_length = 5
+char str[max_length];
+
+for (int i = 0; i < max_length - 1; i++) {
+   str[i] = getchar();
+}
+
+It should be fine as you're breaking on new-line as well. 
