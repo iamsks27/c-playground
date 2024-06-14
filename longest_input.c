@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAXLINE 50 /* maximum input line size */
+#define MAXLINE 10 /* maximum input line size */
 
 int readline(char line[], int maxline);
 void copy(char to[], char from[]);
@@ -14,6 +14,7 @@ int main(int argv, char **argc)
     max = 0;
     while ((len = readline(line, MAXLINE)) > 0)
     {
+        printf("line: %s\n", line);
         if (max < len)
         {
             max = len;
@@ -39,10 +40,14 @@ int readline(char line[], int limit)
         line[i++] = c;
     }
 
+    printf("index1: %d, ", i);
+
     if (c == '\n')
     {
         line[i++] = c;
     }
+
+    printf("index2: %d\n", i);
 
     line[i] = '\0';
 

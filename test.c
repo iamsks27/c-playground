@@ -20,7 +20,8 @@ int main()
     //     printf("%c,", items[i]);
     // }
 
-    char s[] = "Hello, There\n";
+
+    char s[] = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'T', '\n', '\0'};
 
     printf("%s\n", s);
     printf("%lu\n", strlen(s));
