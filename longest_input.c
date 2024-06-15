@@ -5,74 +5,67 @@
 int readline(char line[], int maxline);
 void copy(char to[], char from[]);
 
-int main(int argv, char **argc)
-{
-    int len, max;
-    char line[MAXLINE];
-    char longest[MAXLINE];
+int main(int argv, char **argc) {
+  int len, max;
+  char line[MAXLINE];
+  char longest[MAXLINE];
 
-    max = 0;
-    while ((len = readline(line, MAXLINE)) > 0)
-    {
-        printf("line: %s\n", line);
-        if (max < len)
-        {
-            max = len;
-            copy(longest, line);
-        }
+  max = 0;
+  while ((len = readline(line, MAXLINE)) > 0) {
+    printf("line: %s\n", line);
+    if (max < len) {
+      max = len;
+      copy(longest, line);
     }
+  }
 
-    if (max > 0)
-    {
-        printf("\nThe longest line is:\n");
-        printf("%s\n", longest);
-    }
+  if (max > 0) {
+    printf("\nThe longest line is:\n");
+    printf("%s\n", longest);
+  }
 
-    return 0;
+  return 0;
 }
 
-int readline(char line[], int limit)
-{
-    int c, i = 0;
+int readline(char line[], int limit) {
+  int c, i = 0;
 
-    while (i < limit - 1 && (c = getchar()) != EOF && c != '\n')
-    {
-        line[i++] = c;
-    }
+  while (i < limit - 1 && (c = getchar()) != EOF && c != '\n') {
+    line[i++] = c;
+  }
 
-    printf("index1: %d, ", i);
+  printf("index1: %d, ", i);
 
-    if (c == '\n')
-    {
-        line[i++] = c;
-    }
+  if (c == '\n') {
+    line[i++] = c;
+  }
 
-    printf("index2: %d\n", i);
+  printf("index2: %d\n", i);
 
-    line[i] = '\0';
+  line[i] = '\0';
 
-    // for (i = 0; i < limit - 1 && (c = getchar()) != EOF && c != '\n'; i++)
-    // {
-    //     line[i] = c;
-    // }
+  // for (i = 0; i < limit - 1 && (c = getchar()) != EOF && c != '\n'; i++)
+  // {
+  //     line[i] = c;
+  // }
 
-    // // Add new line as well in the string
-    // if (c == '\n')
-    // {
-    //     line[i++] = c;
-    // }
+  // // Add new line as well in the string
+  // if (c == '\n')
+  // {
+  //     line[i++] = c;
+  // }
 
-    // // Terminating the string
-    // line[i] = '\0';
+  // // Terminating the string
+  // line[i] = '\0';
 
-    return i;
+  return i;
 }
 
-void copy(char to[], char from[])
-{
-    int i = 0;
+void copy(char to[], char from[]) {
+  int i = 0;
 
-    // Copying the value from one string to another unless terminate character is encountered.
-    while ((to[i] = from[i]) != '\0')
-        i++;
+  // Copying the value from one string to another unless terminate character is
+  // encountered.
+  while ((to[i] = from[i]) != '\0')
+    i++;
 }
