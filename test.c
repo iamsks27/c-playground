@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
+void print_debug(char *file, int line, char *arg) {
+    printf("file: %s, line: %d, argument: %s", file, line, arg);
+}
+
+
+#define print(arg) print_debug(__FILE__, __LINE__, arg)
+
 int main()
 {
     // char c;
@@ -25,4 +32,8 @@ int main()
 
     printf("%s\n", s);
     printf("%lu\n", strlen(s));
+
+    print(s);
+
+    return 0;
 }
